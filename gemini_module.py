@@ -4,8 +4,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 GEMINI_API_KEY = os.getenv("GOOGLE_API_KEY")
+GEMINI_LINK = os.getenv("GEMINI_LINK")
 
-GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" + GEMINI_API_KEY
+GEMINI_URL = GEMINI_LINK + GEMINI_API_KEY
 
 def generate_gemini_response(prompt, context):
     payload = {
